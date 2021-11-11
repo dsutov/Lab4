@@ -5,15 +5,13 @@ import java.util.Scanner;
 
 public class Lab4q2 {
 
-    public static void fileSplitter(String words, int numFiles) throws FileNotFoundException {
+    public static void fileSplitter(File[] fa, int numFiles) throws FileNotFoundException {
 
 
 
 
 
-    }
-
-
+}
 
 
     public static void main(String[] args) throws FileNotFoundException
@@ -36,13 +34,12 @@ public class Lab4q2 {
             Scanner scan = new Scanner(f);
 
             int count = 0;
-            String words = "";
 
             while (scan.hasNextLine())
             {
-                words = scan.next();
+                String word = scan.next();
 
-                pw[count % numWords].print(words + " "); // puts word in to correct file
+                pw[count % numWords].print(word + " "); // puts word in to correct file
                 count++;
             }
 
@@ -51,7 +48,7 @@ public class Lab4q2 {
                 pw[i].close();
             }
 
-            fileSplitter(words, numFiles);
+            fileSplitter(fa, numFiles);
 
         }
         catch(Exception e)
