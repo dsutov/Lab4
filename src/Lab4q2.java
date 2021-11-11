@@ -27,33 +27,22 @@ public class Lab4q2 {
 
             int count = 0;
 
-            public String[] list()
-            {
-
-            }
 
             while (scan.hasNextLine())
             {
                 String word = scan.next();
-                if (count % numWords == 0)
-                {
-                    System.out.println(word);
-                }
 
-                pw[count % numWords].print(word);
-
+                pw[count % numWords].print(word + " "); // puts word in to correct file
                 count++;
             }
 
-            for(int i = 0; i < numFiles; i++)
+
+            for(int i = 0; i < numFiles; i++) // closes printwriter for each file
             {
                 pw[i].close();
             }
 
-            /*for(int i = 0; i < numFiles; i++)
-            {
 
-            }*/
 
 
         }
